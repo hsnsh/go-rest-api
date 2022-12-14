@@ -14,7 +14,7 @@ import (
 var productStore = make(map[string]ProductDto)
 var id int = 0
 
-// HTTP GET - /api/products
+// GetProductsHandler HTTP GET - /api/products
 func GetProductsHandler(w http.ResponseWriter, r *http.Request) {
 	var products []ProductDto
 
@@ -33,7 +33,7 @@ func GetProductsHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write(data)
 }
 
-// HTTP GET - /api/products/{id}
+// GetProductHandler HTTP GET - /api/products/{id}
 func GetProductHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Get variables from request url
@@ -61,7 +61,7 @@ func GetProductHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write(data)
 }
 
-// HTTP POST - /api/products
+// PostProductHandler : HTTP POST - /api/products
 func PostProductHandler(w http.ResponseWriter, r *http.Request) {
 
 	var productCreateDto ProductCreateDto
@@ -93,7 +93,7 @@ func PostProductHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write(data)
 }
 
-// HTTP PUT - /api/products/{id}
+// PutProductHandler HTTP PUT - /api/products/{id}
 func PutProductHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Get variables from request url
@@ -134,7 +134,7 @@ func PutProductHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write(data)
 }
 
-// HTTP DELETE - /api/products/{id}
+// DeleteProductHandler : HTTP DELETE - /api/products/{id}
 func DeleteProductHandler(w http.ResponseWriter, r *http.Request) {
 	// Get variables from request url
 	variables := mux.Vars(r)

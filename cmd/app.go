@@ -24,6 +24,10 @@ func main() {
 		Handler: r,
 	}
 
-	server.ListenAndServe()
+	err := server.ListenAndServe()
+	if err != nil {
+		log.Println(err.Error())
+	}
+
 	log.Println("Server ending ...")
 }
